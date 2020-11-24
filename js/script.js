@@ -1,1 +1,1 @@
-console.log("test");
+let userName = document.querySelector("#name").focus();
