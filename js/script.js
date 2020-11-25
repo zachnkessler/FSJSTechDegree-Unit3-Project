@@ -61,5 +61,34 @@ activities.addEventListener("change", (e) => {
 
 ////////////////////////////////////////
 
+let payment = document.querySelector("#payment");
+let creditCard = document.querySelector("#credit-card");
+let paypal = document.querySelector("#paypal");
+let bitcoin = document.querySelector("#bitcoin");
+
+paypal.style.display = "none";
+bitcoin.style.display = "none";
+
+payment.children[1].selected;
+
+payment.addEventListener("change", (e) => {
+    let selectedMethod = e.target.value;
+    if (selectedMethod === "credit-card") {
+        creditCard.style.display = "block";
+        paypal.style.display = "none";
+        bitcoin.style.display = "none";
+    } else if (selectedMethod === "paypal") {
+        paypal.style.display = "block";
+        bitcoin.style.display = "none";
+        creditCard.style.display = "none";
+    } else if (selectedMethod === "bitcoin") {
+        bitcoin.style.display = "block";
+        paypal.style.display = "none";
+        creditCard.style.display = "none";
+    }
+})
+
+////////////////////////////////////////
+
 
 
