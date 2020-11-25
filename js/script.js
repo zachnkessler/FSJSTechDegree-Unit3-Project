@@ -1,5 +1,11 @@
-let userName = document.querySelector("#name").focus();
+/******************************************
+Treehouse FSJS Techdegree:
+Project 3 - Interactive Form
+Zachary Kessler
+11/25/2020
+******************************************/
 
+let userName = document.querySelector("#name").focus();
 let jobRole = document.querySelector("#title");
 let otherJobRole = document.querySelector(".other-job-role");
 
@@ -13,6 +19,8 @@ jobRole.addEventListener("change", (e) => {
         otherJobRole.style.display = "none";
     }
 })
+
+////////////////////////////////////////
 
 let design = document.querySelector("#design");
 let color = document.querySelector("#color");
@@ -32,3 +40,26 @@ design.addEventListener("change", (e) => {
        }
     }
 })
+
+////////////////////////////////////////
+
+let activities = document.querySelector("#activities");
+let totalActivitiesCost = document.querySelector("#activities-cost");
+
+let runningTotalActivitiesCost = 0;
+
+activities.addEventListener("change", (e) => {
+    let dataCost = e.target.getAttribute("data-cost");
+    dataCost = +dataCost;
+    if (e.target.checked === true) {
+      runningTotalActivitiesCost += dataCost;
+    } else if (e.target.checked === false) {
+      runningTotalActivitiesCost = runningTotalActivitiesCost - dataCost;
+    }
+    totalActivitiesCost.innerHTML = `Total: $${runningTotalActivitiesCost}`;
+})
+
+////////////////////////////////////////
+
+
+
