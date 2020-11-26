@@ -5,7 +5,8 @@ Zachary Kessler
 11/25/2020
 ******************************************/
 
-let userName = document.querySelector("#name").focus();
+let userName = document.querySelector("#name");
+userName.focus();
 let jobRole = document.querySelector("#title");
 let otherJobRole = document.querySelector(".other-job-role");
 
@@ -90,5 +91,17 @@ payment.addEventListener("change", (e) => {
 
 ////////////////////////////////////////
 
+let userEmail = document.querySelector("#email");
+let creditCardNumber = document.querySelector("#cc-num");
+let userZipCode = document.querySelector("#zip");
+let CVV = document.querySelector("#cvv");
+let form = document.querySelector("form");
 
-
+form.addEventListener("submit", (e) => {
+    let nameValue = userName.value;
+    let nameTest = /^[a-zA-Z]+$/.test(nameValue);
+    if (nameTest === false) {
+        e.preventDefault();
+    };
+    
+})
