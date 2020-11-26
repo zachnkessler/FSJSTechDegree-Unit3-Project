@@ -99,9 +99,33 @@ let form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
     let nameValue = userName.value;
-    let nameTest = /^[a-zA-Z]+$/.test(nameValue);
+    let nameTest = /^[a-zA-Z]+$/i.test(nameValue);
     if (nameTest === false) {
         e.preventDefault();
     };
-    
+    let emailValue = userEmail.value;
+    let emailTest = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/i.test(emailValue);
+    if (emailTest === false) {
+        e.preventDefault();
+    }
+
+    // Activity Selection Validation goes here
+
+    if (payment.children[1].selected === true) {
+        let creditCardValue = creditCardNumber.value;
+        let creditCardTest = /^\d{4}-\d{4}-\d{4}-\d{4}$/.test(creditCardValue);
+        if (creditCardTest === false) {
+            e.preventDefault();
+        }
+        let zipCodeValue = userZipCode.value;
+        let zipCodeTest = /^\d{5}$/.test(zipCodeValue);
+        if (zipCodeTest === false) {
+            e.preventDefault();
+        }
+        let CVVValue = CVV.value;
+        let CVVTest = /^\d{3,4}$/.test(CVVValue);
+        if (CVVTest === false) {
+            e.preventDefault();
+        }
+    }
 })
