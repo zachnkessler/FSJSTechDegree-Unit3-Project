@@ -76,7 +76,7 @@ let bitcoin = document.querySelector("#bitcoin");
 paypal.style.display = "none";
 bitcoin.style.display = "none";
 
-payment.children[1].selected;
+payment.children[1].selected = true;
 
 payment.addEventListener("change", (e) => {
     let selectedMethod = e.target.value;
