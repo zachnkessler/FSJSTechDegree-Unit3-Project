@@ -101,7 +101,6 @@ payment.addEventListener("change", (e) => {
 from submitting if there is an error. Also displays or hides error messages indicating
 what needs to be corrected when an input's value does not pass the regex test.
 */ 
-
 let userEmail = document.querySelector("#email");
 let creditCardNumber = document.querySelector("#cc-num");
 let userZipCode = document.querySelector("#zip");
@@ -223,3 +222,4 @@ for (let i = 0; i < checkboxes.length; i++) {
     })
 }
 
+////////////////////////////////////////
