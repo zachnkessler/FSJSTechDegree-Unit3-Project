@@ -41,7 +41,8 @@ design.addEventListener("change", (e) => {
        if (option === selection) {
          colorChildren[i].removeAttribute('hidden');
        } else {
-         colorChildren[i].hidden = true;
+         colorChildren[i].setAttribute("hidden", "hidden");
+         colorChildren[0].selected = true;
        }
     }
 })
